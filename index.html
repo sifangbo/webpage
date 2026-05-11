@@ -42,22 +42,53 @@
         .pub-list li {
             margin-bottom: 18px;
         }
+        .lang-switch {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            font-size: 14px;
+        }
+        .lang-switch a {
+            cursor: pointer;
+            color: #0645ad;
+            text-decoration: none;
+        }
+        .cn { display: none; }
     </style>
+    <script>
+        function switchLang(lang) {
+            document.querySelectorAll('.en').forEach(el => el.style.display = (lang === 'en') ? '' : 'none');
+            document.querySelectorAll('.cn').forEach(el => el.style.display = (lang === 'cn') ? '' : 'none');
+        }
+    </script>
 </head>
 
 <body>
+    
+<div class="lang-switch">
+    <a onclick="switchLang('en')">English</a> |
+    <a onclick="switchLang('cn')">中文</a>
+</div>
 
 <div class="header">
     <img src="profile.jpg" class="profile-img">
-    <div>
+    <div class="en">
         <h1>Fangbo Si (司方博)</h1>
         <p>Assistant Professor</p>
         <p>Department of Accounting, School of Management, Jinan University (暨南大学)</p>
         <p>601 Huangpu Avenue, Guangzhou, China, 510632</p>
         <p>Email: <a href="mailto:sifangbo@jnu.edu.cn">sifangbo@jnu.edu.cn</a></p>
     </div>
+    <div class="cn">
+        <h1>司方博</h1>
+        <p>助理教授</p>
+        <p>暨南大学管理学院会计学系</p>
+        <p>广州市黄埔大道西601号（510632）</p>
+        <p>工作邮箱： <a href="mailto:sifangbo@jnu.edu.cn">sifangbo@jnu.edu.cn</a></p>
+    </div>
 </div>
 
+<div class="en">
 <h2>About Me</h2>
 <p>
 I am an Assistant Professor in the Department of Accounting at Jinan University. I also serve as Deputy Director of the MPAcc Center at the School of Management and Assistant Head of the Department of Accounting, roles that keep me both busy and engaged across research, teaching, and academic service. 
@@ -67,6 +98,7 @@ In my life, I try to follow a simple philosophy: <em>do good and do well</em>, t
 Ultimately, I hope my work, whether in research, teaching, or service, contributes in small but meaningful ways to both academic knowledge and the broader community.
 <!--<a href="cv.pdf">[Download CV]</a>-->
 </p>
+</div>
 
 <h2>Education</h2>
 <ul>
