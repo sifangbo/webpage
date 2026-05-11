@@ -54,11 +54,19 @@
             text-decoration: none;
         }
         .cn { display: none; }
+        .en, .cn {
+            width: 100%;
+        }
     </style>
     <script>
         function switchLang(lang) {
-            document.querySelectorAll('.en').forEach(el => el.style.display = (lang === 'en') ? '' : 'none');
-            document.querySelectorAll('.cn').forEach(el => el.style.display = (lang === 'cn') ? '' : 'none');
+            document.querySelectorAll('.en').forEach(el => {
+                el.style.display = (lang === 'en') ? 'block' : 'none';
+            });
+
+            document.querySelectorAll('.cn').forEach(el => {
+                el.style.display = (lang === 'cn') ? 'block' : 'none';
+            });
         }
     </script>
 </head>
